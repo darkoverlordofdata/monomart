@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="monomart.Models.Domain" assembly="monomart">
+
+	<sql-query name="MM_DelCart" callable="true">
+        <query-param name="orderId" type="int"/>
+        call MM_DelCart(:orderId);
+    </sql-query>
+
+	<sql-query name="MM_GetBrand" callable="true">
+        <query-param name="id" type="int"/>
+ 		<return-scalar column="id" type="int"/>
+ 		<return-scalar column="name" type="string"/>
+        call MM_GetBrand(:id);
+    </sql-query>
+
+   	<sql-query name="MM_GetProducts" callable="true">
+        <query-param name="brandId" type="int"/>
+ 		<return-scalar column="id" type="int"/>
+ 		<return-scalar column="brand" type="string"/>
+ 		<return-scalar column="name" type="string"/>
+ 		<return-scalar column="size" type="string"/>
+ 		<return-scalar column="upc" type="string"/>
+ 		<return-scalar column="price" type="decimal"/>
+ 		<return-scalar column="ingredients" type="string"/>
+ 		<return-scalar column="servings" type="string"/>
+ 		<return-scalar column="servingsize" type="string"/>
+ 		<return-scalar column="image" type="string"/>
+        call MM_GetProducts(:brandId);
+    </sql-query>
+
+	<sql-query name="MM_GetCart" callable="true">
+        <query-param name="orderId" type="int"/>
+ 		<return-scalar column="id" type="int"/>
+ 		<return-scalar column="order_id" type="int"/>
+ 		<return-scalar column="product_id" type="int"/>
+ 		<return-scalar column="brand" type="string"/>
+ 		<return-scalar column="name" type="string"/>
+ 		<return-scalar column="size" type="string"/>
+ 		<return-scalar column="upc" type="string"/>
+ 		<return-scalar column="price" type="decimal"/>
+ 		<return-scalar column="servings" type="string"/>
+ 		<return-scalar column="servingsize" type="string"/>
+ 		<return-scalar column="ingredients" type="string"/>
+ 		<return-scalar column="image" type="string"/>
+ 		<return-scalar column="quantity" type="int"/>
+        call MM_GetCart(:orderId);
+    </sql-query>
+
+	<sql-query name="MM_GetOrder" callable="true">
+        <query-param name="id" type="int"/>
+ 		<return-scalar column="id" type="int"/>
+ 		<return-scalar column="order_guid" type="string"/>
+ 		<return-scalar column="order_id" type="string"/>
+ 		<return-scalar column="order_date" type="datetime"/>
+ 		<return-scalar column="order_status" type="int"/>
+ 		<return-scalar column="customer_name" type="string"/>
+ 		<return-scalar column="customer_email" type="string"/>
+ 		<return-scalar column="phone_number" type="string"/>
+ 		<return-scalar column="ship_to_name" type="string"/>
+ 		<return-scalar column="ship_to_address1" type="string"/>
+ 		<return-scalar column="ship_to_address2" type="string"/>
+ 		<return-scalar column="ship_to_city" type="string"/>
+ 		<return-scalar column="ship_to_country" type="string"/>
+ 		<return-scalar column="ship_to_state" type="string"/>
+ 		<return-scalar column="ship_to_zip" type="string"/>
+        call MM_GetOrder(:id);
+    </sql-query>
+
+	<sql-query name="MM_NewCart" callable="true">
+        <query-param name="orderIp" type="string"/>
+ 		<return-scalar column="id" type="int"/>
+        call MM_NewCart(:orderIp);
+    </sql-query>
+
+	<sql-query name="MM_ShipTo" callable="true">
+        <query-param name="order_id" type="int"/>
+        <query-param name="confirmation" type="string"/>
+        <query-param name="customer_name" type="string"/>
+        <query-param name="customer_email" type="string"/>
+        <query-param name="phone_number" type="string"/>
+        <query-param name="ship_to_name" type="string"/>
+        <query-param name="ship_to_address1" type="string"/>
+        <query-param name="ship_to_address2" type="string"/>
+        <query-param name="ship_to_city" type="string"/>
+        <query-param name="ship_to_country" type="string"/>
+        <query-param name="ship_to_state" type="string"/>
+        <query-param name="ship_to_zip" type="string"/>
+        call MM_ShipTo(:order_id,:confirmation, :customer_name, :customer_email, :phone_number, :ship_to_name, :ship_to_address1, :ship_to_address2, :ship_to_city, :ship_to_country, :ship_to_state, :ship_to_zip);
+    </sql-query>
+
+	<sql-query name="MM_Submit" callable="true">
+        <query-param name="order_id" type="string"/>
+        call MM_Submit(:order_id);
+    </sql-query>
+
+	<sql-query name="MM_UpdateCart" callable="true">
+        <query-param name="orderId" type="int"/>
+        <query-param name="productId" type="int"/>
+        <query-param name="price" type="decimal"/>
+        <query-param name="quantity" type="int"/>
+        call MM_UpdateCart(:orderId, :productId, :price, :quantity);
+    </sql-query>
+
+</hibernate-mapping>

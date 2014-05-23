@@ -1,0 +1,2 @@
+/home/bruce/Git/monomart/monomart.Tests/obj/Release/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/home/bruce/Git/monomart/monomart.Tests/bin/Release/nunit.framework.dll
