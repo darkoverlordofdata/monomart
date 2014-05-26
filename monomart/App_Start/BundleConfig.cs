@@ -32,7 +32,7 @@ namespace monomart
 
 			bundles.Add(new StyleBundle("~/css/site").Include(
 				"~/Content/css/font.css",
-				//"~/Content/css/bootstrap.css",
+				"~/Content/css/mvcpaging.css",
 				"~/Content/css/site.css"));
 
 		}
