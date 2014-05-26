@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="monomart/Web.config">
+  <MonoDevelop.Ide.Workbench ActiveDocument="monomart/hibernate.cfg.xml">
     <Files>
-      <File FileName="monomart/Web.config" Line="38" Column="40" />
+      <File FileName="monomart/hibernate.cfg.xml" Line="20" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
